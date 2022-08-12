@@ -16,6 +16,8 @@ class MenuController {
         MENU_SELECT_START_VIEW_ENTITIES,
         MENU_SELECT_START_VIEW_SCENES,
 
+        MENU_LOGOUT_CONFIRM,
+
         MENU_BACK
     }
 
@@ -116,6 +118,28 @@ class MenuController {
             "Scenes",
             scenesSubtitle,
             MenuController.MENU_SELECT_START_VIEW_SCENES,
+            {}
+        ));
+
+        menu.addItem(new Ui.MenuItem(
+            "Back",
+            "",
+            MenuController.MENU_BACK,
+            {}
+        ));
+
+        Ui.pushView(menu, _delegate, Ui.SLIDE_IMMEDIATE);
+    }
+
+    function showLogoutConfirmationMenu() {
+        var menu = new WatchUi.Menu2({
+            :title => "Are you sure?"
+        });
+
+        menu.addItem(new Ui.MenuItem(
+            "Yes",
+            "logout",
+            MenuController.MENU_LOGOUT_CONFIRM,
             {}
         ));
 

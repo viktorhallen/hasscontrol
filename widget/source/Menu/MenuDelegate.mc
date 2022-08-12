@@ -24,6 +24,10 @@ class MenuDelegate extends Ui.Menu2InputDelegate {
             return true;
         }
         if (itemId == MenuController.MENU_LOGOUT) {
+            App.getApp().menu.showLogoutConfirmationMenu();
+            return true;
+        }
+        if (itemId == MenuController.MENU_LOGOUT_CONFIRM) {
             Ui.popView(Ui.SLIDE_IMMEDIATE);
             Ui.popView(Ui.SLIDE_IMMEDIATE);
             App.getApp().logout();
